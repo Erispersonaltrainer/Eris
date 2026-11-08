@@ -1,184 +1,348 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartão Digital - Personal Trainer</title>
-  <style>
-    :root {
-      --bg-color: #0b0b0d;
-      --card-bg: #16161a;
-      --button-bg: #1f1f24;
-      --button-border: #2e2e38;
-      --accent-color: #8b5cf6;
-      --text-color: #ffffff;
-      --text-muted: #a1a1aa;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eristay Cantuario | Personal Trainer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,600,700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0b0b;
+            --card-bg: #161616;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --text-color: #f1f1f1;
+            --text-muted: #aaaaaa;
+            --transition: all 0.3s ease;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    .container {
-      width: 100%;
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+            padding: 30px 20px;
+            text-align: center;
+        }
 
-    /* Foto/Logótipo Perfil */
-    .avatar-container {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 3px solid var(--accent-color);
-      padding: 4px;
-      margin-bottom: 24px;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+        /* Header / Logo */
+        .logo-container {
+            margin-bottom: 20px;
+        }
 
-    .avatar-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
 
-    .section-title {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
+        h1 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
 
-    /* Botões de Especialidade */
-    .links-list {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
+        p.subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-    .link-card {
-      background-color: var(--button-bg);
-      border: 1px solid var(--button-border);
-      color: var(--text-color);
-      padding: 16px 20px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
+        /* Bio Section */
+        .bio-section {
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 3px solid var(--gold);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
 
-    .link-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-    }
+        .bio-section h3 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
 
-    .icon {
-      color: var(--accent-color);
-      font-size: 1.1rem;
-    }
+        .bio-section p {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
 
-    /* Descrição */
-    .description {
-      font-size: 1rem;
-      color: var(--text-color);
-      line-height: 1.5;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
+        /* Buttons & Links */
+        .menu-title {
+            color: var(--gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 20px 0 10px 0;
+            font-weight: 700;
+        }
 
-    /* Botão Principal / CTA */
-    .btn-cta {
-      width: 100%;
-      background-color: var(--accent-color);
-      color: #ffffff;
-      padding: 16px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: opacity 0.2s;
-    }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1f1f1f, #121212);
+            color: var(--text-color);
+            border: 1px solid var(--gold);
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            gap: 10px;
+        }
 
-    .btn-cta:hover {
-      opacity: 0.9;
-    }
-  </style>
+        .btn:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn.primary {
+            background: var(--gold);
+            color: #000;
+            font-weight: 700;
+        }
+
+        .btn.primary:hover {
+            background: var(--gold-light);
+        }
+
+        /* Pricing Box (Accordion/Toggle style) */
+        .pricing-container {
+            text-align: left;
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .pricing-title {
+            color: var(--gold);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-table {
+            width: 100%;
+            font-size: 0.8rem;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .price-table th, .price-table td {
+            padding: 6px 8px;
+            text-align: left;
+            border-bottom: 1px solid #222;
+        }
+
+        .price-table th {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .price-table td {
+            color: var(--text-muted);
+        }
+
+        .price-table td.highlight {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        /* Results / Transformations Grid */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .result-card {
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .result-card span {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 25px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .footer span {
+            color: var(--gold);
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Logótipo ou Foto -->
-    <div class="avatar-container">
-      <img src="https://via.placeholder.com/180" alt="Logótipo">
+    <div class="container">
+        <!-- Logo / Perfil -->
+        <div class="logo-container">
+            <!-- Podes substituir o link da foto de perfil abaixo quando quiseres -->
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80" alt="Eristay Cantuario" class="profile-img">
+            <h1>Eristay Cantuario</h1>
+            <p class="subtitle">Personal Trainer & Consultoria</p>
+        </div>
+
+        <!-- Quem Sou Eu / Missão -->
+        <div class="bio-section">
+            <h3>⚡ Quem Sou Eu</h3>
+            <p>Profissional de Educação Física e Personal Trainer. Minha missão é guiar você até a sua melhor versão física e mental com segurança, técnica e alta performance — seja no presencial ou online.</p>
+        </div>
+
+        <div class="menu-title">Acesse Nossos Planos & Serviços</div>
+
+        <!-- Botão WhatsApp Principal -->
+        <a href="https://wa.me/5586994172728?text=Olá%20Eristay!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20treinamentos." target="_blank" class="btn primary">
+            💬 Agendar Vaga / Falar no WhatsApp
+        </a>
+
+        <!-- Consultoria Digital Mfit -->
+        <a href="https://client.mfitpersonal.com.br/out/signup-link/MTU5NTIw" target="_blank" class="btn">
+            📱 Consultoria On-line (Mfit) - R$ 100/mês
+        </a>
+
+        <!-- Bloco de Preços Presenciais -->
+        <div class="pricing-container">
+            <div class="pricing-title">
+                🏋️‍♂️ Personal Presencial (Individual)
+            </div>
+            <table class="price-table">
+                <tr>
+                    <th>Frequência</th>
+                    <th>Aulas/Mês</th>
+                    <th>Investimento</th>
+                </tr>
+                <tr>
+                    <td>5x / semana</td>
+                    <td>20 aulas</td>
+                    <td class="highlight">R$ 660,00</td>
+                </tr>
+                <tr>
+                    <td>4x / semana</td>
+                    <td>16 aulas</td>
+                    <td class="highlight">R$ 560,00</td>
+                </tr>
+                <tr>
+                    <td>3x / semana</td>
+                    <td>12 aulas</td>
+                    <td class="highlight">R$ 460,00</td>
+                </tr>
+                <tr>
+                    <td>2x / semana</td>
+                    <td>8 aulas</td>
+                    <td class="highlight">R$ 330,00</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Bloco Dupla / Trio -->
+        <div class="pricing-container">
+            <div class="pricing-title">
+                👥 Treino em Dupla ou Trio
+            </div>
+            <table class="price-table">
+                <tr>
+                    <th>Modalidade</th>
+                    <th>Frequência</th>
+                    <th>Total / Mês</th>
+                </tr>
+                <tr>
+                    <td>Dupla (2 pes.)</td>
+                    <td>5x / sem</td>
+                    <td class="highlight">R$ 1.100,00</td>
+                </tr>
+                <tr>
+                    <td>Dupla (2 pes.)</td>
+                    <td>3x / sem</td>
+                    <td class="highlight">R$ 780,00</td>
+                </tr>
+                <tr>
+                    <td>Trio (3 pes.)</td>
+                    <td>5x / sem</td>
+                    <td class="highlight">R$ 1.500,00</td>
+                </tr>
+                <tr>
+                    <td>Trio (3 pes.)</td>
+                    <td>3x / sem</td>
+                    <td class="highlight">R$ 1.050,00</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Resultados / Alunos -->
+        <div class="menu-title">Resultados Reais</div>
+        <div class="results-grid">
+            <div class="result-card">
+                🔥 <span>Evolução de Alunos:</span> Acompanhamento focado em hipertrofia e definição com segurança e constância.
+            </div>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="menu-title">Redes Sociais</div>
+        <a href="https://www.instagram.com/eristaycantuario?xtok=bHRtendoMHozYW81" target="_blank" class="btn">
+            📸 Instagram @eristaycantuario
+        </a>
+
+        <!-- Footer -->
+        <div class="footer">
+            © 2026 <span>Eristay Cantuario</span>. Todos os direitos reservados.
+        </div>
     </div>
-
-    <div class="section-title">Especialista em:</div>
-
-    <!-- Lista de Destaques / Botões -->
-    <div class="links-list">
-      <div class="link-card">
-        <span class="icon">🧘</span>
-        <span>POSTURA & CONSCIÊNCIA</span>
-      </div>
-      <div class="link-card">
-        <span class="icon">🏋️</span>
-        <span>TÉCNICA & EXECUÇÃO</span>
-      </div>
-      <div class="link-card">
-        <span class="icon">🔥</span>
-        <span>EMAGRECIMENTO & HIPERTROFIA</span>
-      </div>
-      <div class="link-card">
-        <span class="icon">🎯</span>
-        <span>TREINO INDIVIDUALIZADO</span>
-      </div>
-    </div>
-
-    <!-- Texto de Apresentação -->
-    <p class="description">
-      Sou especialista em consultoria e acompanhamento de treino focado em resultados reais.
-    </p>
-
-    <!-- Botão de Ação Exemplo (WhatsApp / Contacto) -->
-    <a href="https://wa.me/" class="btn-cta" target="_blank">
-      FALAR NO WHATSAPP
-    </a>
-  </div>
 
 </body>
 </html>
