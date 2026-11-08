@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eristay Cantuario | Personal Trainer</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400,600,700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0b0b0b;
-            --card-bg: #161616;
+            --card-bg: #141414;
             --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --gold-dark: #aa8c2c;
-            --text-color: #f1f1f1;
+            --gold-light: #f5e4a0;
+            --text-color: #ffffff;
             --text-muted: #aaaaaa;
-            --transition: all 0.3s ease;
+            --border-radius: 16px;
         }
 
         * {
@@ -32,317 +30,416 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
             width: 100%;
             max-width: 480px;
             background: var(--card-bg);
-            border: 2px solid var(--gold);
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
-            padding: 30px 20px;
-            text-align: center;
+            border: 1px solid #222;
+            border-radius: 24px;
+            padding: 24px 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
 
-        /* Header / Logo */
-        .logo-container {
+        /* LOGO HEADER */
+        .logo-box {
+            text-align: center;
             margin-bottom: 20px;
         }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid var(--gold);
-            object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        .logo-box img {
+            max-width: 180px;
+            height: auto;
         }
 
-        h1 {
-            font-size: 1.5rem;
-            color: var(--gold);
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        p.subtitle {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        /* BADGES / BOTÕES INICIAIS */
+        .specialties {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
-
-        /* Bio Section */
-        .bio-section {
-            background: rgba(212, 175, 55, 0.05);
-            border-left: 3px solid var(--gold);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .bio-section h3 {
-            color: var(--gold);
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .bio-section p {
+        .spec-item {
+            background: #1c1c1c;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 12px 16px;
             font-size: 0.85rem;
-            color: var(--text-color);
-            line-height: 1.5;
-        }
-
-        /* Buttons & Links */
-        .menu-title {
-            color: var(--gold);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 20px 0 10px 0;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .btn {
+        /* CTA BUTTONS */
+        .cta-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1f1f1f, #121212);
-            color: var(--text-color);
-            border: 1px solid var(--gold);
-            padding: 14px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            cursor: pointer;
             gap: 10px;
-        }
-
-        .btn:hover {
+            width: 100%;
+            padding: 16px;
             background: var(--gold);
             color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn.primary {
-            background: var(--gold);
-            color: #000;
-            font-weight: 700;
-        }
-
-        .btn.primary:hover {
-            background: var(--gold-light);
-        }
-
-        /* Pricing Box (Accordion/Toggle style) */
-        .pricing-container {
-            text-align: left;
-            background: #121212;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .pricing-title {
-            color: var(--gold);
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: var(--border-radius);
             font-size: 0.95rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* SEÇÃO O PROFISSIONAL */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--text-color);
+            margin: 30px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title span {
+            color: var(--gold);
+        }
+
+        .profile-card {
+            background: #181818;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid #282828;
+            margin-bottom: 25px;
+        }
+        .profile-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .profile-info {
+            padding: 20px;
+        }
+        .profile-info h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .profile-info .tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            font-size: 0.75rem;
             font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .profile-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* CARROSSEL ANTES E DEPOIS */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            border: 1px solid #282828;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            padding: 0 10px;
+        }
+        .nav-btn {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* ACCORDION DE PLANOS */
+        .accordion-item {
+            background: #181818;
+            border: 1px solid #282828;
+            border-radius: 12px;
             margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--gold);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 16px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        .accordion-content.open {
+            padding: 16px;
+            max-height: 500px;
+            border-top: 1px solid #252525;
         }
 
-        .price-table {
+        /* MODAL / FORMULÁRIO MULTI-ETAPAS */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 15px;
+        }
+        .modal-content {
+            background: #181818;
+            border: 1px solid var(--gold);
+            border-radius: 20px;
+            padding: 24px;
             width: 100%;
-            font-size: 0.8rem;
-            border-collapse: collapse;
-            margin-top: 8px;
+            max-width: 400px;
+            position: relative;
         }
-
-        .price-table th, .price-table td {
-            padding: 6px 8px;
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 15px;
+            color: #fff; font-size: 1.2rem; cursor: pointer;
+        }
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        .form-group {
+            margin-bottom: 15px;
             text-align: left;
-            border-bottom: 1px solid #222;
         }
-
-        .price-table th {
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .price-table td {
-            color: var(--text-muted);
-        }
-
-        .price-table td.highlight {
-            color: var(--gold-light);
-            font-weight: 700;
-        }
-
-        /* Results / Transformations Grid */
-        .results-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .result-card {
-            background: #121212;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 10px;
+        .form-group label {
+            display: block;
             font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .result-card span {
             color: var(--gold);
-            font-weight: 700;
+            margin-bottom: 5px;
         }
-
-        /* Footer */
-        .footer {
-            margin-top: 25px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .footer span {
-            color: var(--gold);
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo / Perfil -->
-        <div class="logo-container">
-            <!-- Podes substituir o link da foto de perfil abaixo quando quiseres -->
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80" alt="Eristay Cantuario" class="profile-img">
-            <h1>Eristay Cantuario</h1>
-            <p class="subtitle">Personal Trainer & Consultoria</p>
+        <!-- LOGO -->
+        <div class="logo-box">
+            <!-- Substituir 'logo.png' pelo caminho ou URL da imagem do logo -->
+            <img src="logo.png" alt="Eristay Cantuario Logo">
         </div>
 
-        <!-- Quem Sou Eu / Missão -->
-        <div class="bio-section">
-            <h3>⚡ Quem Sou Eu</h3>
-            <p>Profissional de Educação Física e Personal Trainer. Minha missão é guiar você até a sua melhor versão física e mental com segurança, técnica e alta performance — seja no presencial ou online.</p>
+        <!-- LISTA DE ESPECIALIDADES -->
+        <div class="specialties">
+            <div class="spec-item">📌 Postura & Biomecânica</div>
+            <div class="spec-item">⚡ Técnica & Alta Performance</div>
+            <div class="spec-item">🔥 Emagrecimento & Hipertrofia</div>
+            <div class="spec-item">🎯 Treino Individualizado</div>
         </div>
 
-        <div class="menu-title">Acesse Nossos Planos & Serviços</div>
-
-        <!-- Botão WhatsApp Principal -->
-        <a href="https://wa.me/5586994172728?text=Olá%20Eristay!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20treinamentos." target="_blank" class="btn primary">
-            💬 Agendar Vaga / Falar no WhatsApp
+        <!-- BOTÕES DE AÇÃO -->
+        <a href="https://wa.me/5586994172728?text=Olá%20Eristay!%20Vim%20pelo%20site%20e%20quero%20iniciar%20o%20acompanhamento." class="cta-btn" target="_blank">
+            💬 Falar no WhatsApp
         </a>
+        <button class="cta-btn" onclick="openModal()" style="background: #1f1f1f; color: var(--gold); border: 1px solid var(--gold);">
+            👑 Ver Planos & Cadastrar
+        </button>
 
-        <!-- Consultoria Digital Mfit -->
-        <a href="https://client.mfitpersonal.com.br/out/signup-link/MTU5NTIw" target="_blank" class="btn">
-            📱 Consultoria On-line (Mfit) - R$ 100/mês
-        </a>
-
-        <!-- Bloco de Preços Presenciais -->
-        <div class="pricing-container">
-            <div class="pricing-title">
-                🏋️‍♂️ Personal Presencial (Individual)
-            </div>
-            <table class="price-table">
-                <tr>
-                    <th>Frequência</th>
-                    <th>Aulas/Mês</th>
-                    <th>Investimento</th>
-                </tr>
-                <tr>
-                    <td>5x / semana</td>
-                    <td>20 aulas</td>
-                    <td class="highlight">R$ 660,00</td>
-                </tr>
-                <tr>
-                    <td>4x / semana</td>
-                    <td>16 aulas</td>
-                    <td class="highlight">R$ 560,00</td>
-                </tr>
-                <tr>
-                    <td>3x / semana</td>
-                    <td>12 aulas</td>
-                    <td class="highlight">R$ 460,00</td>
-                </tr>
-                <tr>
-                    <td>2x / semana</td>
-                    <td>8 aulas</td>
-                    <td class="highlight">R$ 330,00</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Bloco Dupla / Trio -->
-        <div class="pricing-container">
-            <div class="pricing-title">
-                👥 Treino em Dupla ou Trio
-            </div>
-            <table class="price-table">
-                <tr>
-                    <th>Modalidade</th>
-                    <th>Frequência</th>
-                    <th>Total / Mês</th>
-                </tr>
-                <tr>
-                    <td>Dupla (2 pes.)</td>
-                    <td>5x / sem</td>
-                    <td class="highlight">R$ 1.100,00</td>
-                </tr>
-                <tr>
-                    <td>Dupla (2 pes.)</td>
-                    <td>3x / sem</td>
-                    <td class="highlight">R$ 780,00</td>
-                </tr>
-                <tr>
-                    <td>Trio (3 pes.)</td>
-                    <td>5x / sem</td>
-                    <td class="highlight">R$ 1.500,00</td>
-                </tr>
-                <tr>
-                    <td>Trio (3 pes.)</td>
-                    <td>3x / sem</td>
-                    <td class="highlight">R$ 1.050,00</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Resultados / Alunos -->
-        <div class="menu-title">Resultados Reais</div>
-        <div class="results-grid">
-            <div class="result-card">
-                🔥 <span>Evolução de Alunos:</span> Acompanhamento focado em hipertrofia e definição com segurança e constância.
+        <!-- SEÇÃO O PROFISSIONAL -->
+        <div class="section-title"><span>●</span> O Profissional</div>
+        <div class="profile-card">
+            <!-- Substituir 'perfil.jpg' pelo caminho ou URL da sua foto -->
+            <img src="perfil.jpg" alt="Eristay Cantuario" class="profile-img">
+            <div class="profile-info">
+                <h3>ERISTAY CANTUARIO</h3>
+                <span class="tag">Personal Trainer</span>
+                <p>Profissional de Educação Física. O foco é transformar vidas e corpos através do treino certo, unindo técnica, alta performance e acompanhamento individualizado de verdade — seja na consultoria on-line ou no atendimento presencial.</p>
+                <p><strong>Missão:</strong> Guiar você até a sua melhor versão física e mental, entregando o caminho exato para hipertrofia e emagrecimento com segurança e suporte diário.</p>
             </div>
         </div>
 
-        <!-- Redes Sociais -->
-        <div class="menu-title">Redes Sociais</div>
-        <a href="https://www.instagram.com/eristaycantuario?xtok=bHRtendoMHozYW81" target="_blank" class="btn">
-            📸 Instagram @eristaycantuario
-        </a>
+        <!-- SEÇÃO TRANSFORMAÇÕES (CARROSSEL) -->
+        <div class="section-title"><span>●</span> Transformações Reais</div>
+        <div class="carousel-container">
+            <div class="carousel-track" id="track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <!-- Substituir 'antes-depois-1.jpg' pelo caminho ou URL da imagem 1 -->
+                    <img src="antes-depois-1.jpg" alt="Evolução Aluno 1">
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <!-- Substituir 'antes-depois-2.jpg' pelo caminho ou URL da imagem 2 -->
+                    <img src="antes-depois-2.jpg" alt="Evolução Aluno 2">
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="nav-btn" onclick="moveSlide(-1)">❮</button>
+                <button class="nav-btn" onclick="moveSlide(1)">❯</button>
+            </div>
+        </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            © 2026 <span>Eristay Cantuario</span>. Todos os direitos reservados.
+        <!-- SEÇÃO PLANOS (ACCORDION) -->
+        <div class="section-title"><span>●</span> Planos & Investimento</div>
+        
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                📱 Consultoria On-line <span>▼</span>
+            </div>
+            <div class="accordion-content">
+                <p><strong>Investimento: R$ 100,00/mês</strong></p><br>
+                <p> Treino 100% individualizado via aplicativo Mfit Personal com vídeos demonstrativos, periodização contínua e suporte direto via WhatsApp para correção de exercícios e dúvidas.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                🏋️ Personal Presencial (Individual) <span>▼</span>
+            </div>
+            <div class="accordion-content">
+                <p>• <strong>5x/semana (20 aulas):</strong> R$ 660,00/mês</p>
+                <p>• <strong>4x/semana (16 aulas):</strong> R$ 560,00/mês</p>
+                <p>• <strong>3x/semana (12 aulas):</strong> R$ 460,00/mês</p>
+                <p>• <strong>2x/semana (8 aulas):</strong> R$ 330,00/mês</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                👥 Plano Dupla ou Trio <span>▼</span>
+            </div>
+            <div class="accordion-content">
+                <p><strong>Plano Dupla (2 pessoas):</strong></p>
+                <p>• 5x/sem: R$ 550 por aluno (Total: R$ 1.100)</p>
+                <p>• 3x/sem: R$ 390 por aluno (Total: R$ 780)</p><br>
+                <p><strong>Plano Trio (3 pessoas):</strong></p>
+                <p>• 5x/sem: R$ 500 por aluno (Total: R$ 1.500)</p>
+                <p>• 3x/sem: R$ 350 por aluno (Total: R$ 1.050)</p>
+            </div>
         </div>
     </div>
 
+    <!-- MODAL / FORMULÁRIO DE CADASTRO -->
+    <div class="modal" id="leadModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">✕</span>
+            <div class="form-step active" id="step1">
+                <h4 style="color:var(--gold); margin-bottom:15px;">Passo 1 de 2: Seus Dados</h4>
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="leadName" placeholder="Ex: João da Silva">
+                </div>
+                <div class="form-group">
+                    <label>Seu WhatsApp</label>
+                    <input type="tel" id="leadPhone" placeholder="(86) 99999-9999">
+                </div>
+                <button class="cta-btn" onclick="nextStep(2)">Próximo Passo ➔</button>
+            </div>
+            
+            <div class="form-step" id="step2">
+                <h4 style="color:var(--gold); margin-bottom:15px;">Passo 2 de 2: Objetivo</h4>
+                <div class="form-group">
+                    <label>Qual o seu objetivo principal?</label>
+                    <select id="leadGoal">
+                        <option>Hipertrofia / Ganho de Massa</option>
+                        <option>Emagrecimento / Definição</option>
+                        <option>Saúde / Condicionamento</option>
+                    </select>
+                </div>
+                <button class="cta-btn" onclick="sendToWhatsapp()">Finalizar via WhatsApp 💬</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Carrossel de Imagens */
+        let currentSlide = 0;
+        function moveSlide(direction) {
+            const track = document.getElementById('track');
+            const totalSlides = track.children.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        /* Accordion dos Planos */
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            content.classList.toggle('open');
+        }
+
+        /* Modal Formulário */
+        function openModal() {
+            document.getElementById('leadModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('leadModal').style.display = 'none';
+        }
+        function nextStep(step) {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+        }
+        function sendToWhatsapp() {
+            const name = document.getElementById('leadName').value;
+            const phone = document.getElementById('leadPhone').value;
+            const goal = document.getElementById('leadGoal').value;
+            const msg = `Olá Eristay! Meu nome é ${name} (${phone}) e meu objetivo é ${goal}. Gostaria de agendar minha consultoria!`;
+            window.open(`https://wa.me/5586994172728?text=${encodeURIComponent(msg)}`, '_blank');
+            closeModal();
+        }
+    </script>
 </body>
 </html>
