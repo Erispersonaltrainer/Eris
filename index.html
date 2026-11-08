@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartão Digital - Personal Trainer</title>
+  <style>
+    :root {
+      --bg-color: #0b0b0d;
+      --card-bg: #16161a;
+      --button-bg: #1f1f24;
+      --button-border: #2e2e38;
+      --accent-color: #8b5cf6;
+      --text-color: #ffffff;
+      --text-muted: #a1a1aa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Foto/Logótipo Perfil */
+    .avatar-container {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      padding: 4px;
+      margin-bottom: 24px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    /* Botões de Especialidade */
+    .links-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .link-card {
+      background-color: var(--button-bg);
+      border: 1px solid var(--button-border);
+      color: var(--text-color);
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .link-card:hover {
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .icon {
+      color: var(--accent-color);
+      font-size: 1.1rem;
+    }
+
+    /* Descrição */
+    .description {
+      font-size: 1rem;
+      color: var(--text-color);
+      line-height: 1.5;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    /* Botão Principal / CTA */
+    .btn-cta {
+      width: 100%;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-cta:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Logótipo ou Foto -->
+    <div class="avatar-container">
+      <img src="https://via.placeholder.com/180" alt="Logótipo">
+    </div>
+
+    <div class="section-title">Especialista em:</div>
+
+    <!-- Lista de Destaques / Botões -->
+    <div class="links-list">
+      <div class="link-card">
+        <span class="icon">🧘</span>
+        <span>POSTURA & CONSCIÊNCIA</span>
+      </div>
+      <div class="link-card">
+        <span class="icon">🏋️</span>
+        <span>TÉCNICA & EXECUÇÃO</span>
+      </div>
+      <div class="link-card">
+        <span class="icon">🔥</span>
+        <span>EMAGRECIMENTO & HIPERTROFIA</span>
+      </div>
+      <div class="link-card">
+        <span class="icon">🎯</span>
+        <span>TREINO INDIVIDUALIZADO</span>
+      </div>
+    </div>
+
+    <!-- Texto de Apresentação -->
+    <p class="description">
+      Sou especialista em consultoria e acompanhamento de treino focado em resultados reais.
+    </p>
+
+    <!-- Botão de Ação Exemplo (WhatsApp / Contacto) -->
+    <a href="https://wa.me/" class="btn-cta" target="_blank">
+      FALAR NO WHATSAPP
+    </a>
+  </div>
+
+</body>
+</html>
