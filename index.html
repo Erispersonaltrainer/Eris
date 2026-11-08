@@ -51,6 +51,7 @@
         .logo-box img {
             max-width: 180px;
             height: auto;
+            border-radius: 12px;
         }
 
         /* BADGES / BOTÕES INICIAIS */
@@ -226,61 +227,14 @@
             max-height: 500px;
             border-top: 1px solid #252525;
         }
-
-        /* MODAL / FORMULÁRIO MULTI-ETAPAS */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85);
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            padding: 15px;
-        }
-        .modal-content {
-            background: #181818;
-            border: 1px solid var(--gold);
-            border-radius: 20px;
-            padding: 24px;
-            width: 100%;
-            max-width: 400px;
-            position: relative;
-        }
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 15px;
-            color: #fff; font-size: 1.2rem; cursor: pointer;
-        }
-        .form-step { display: none; }
-        .form-step.active { display: block; }
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            background: #0b0b0b;
-            border: 1px solid #333;
-            color: #fff;
-            border-radius: 8px;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- LOGO -->
+        <!-- LOGO (Puxando a tua imagem exata enviada) -->
         <div class="logo-box">
-            <!-- Substituir 'logo.png' pelo caminho ou URL da imagem do logo -->
-            <img src="logo.png" alt="Eristay Cantuario Logo">
+            <img src="IMG_2081.png" alt="Eristay Cantuario Logo">
         </div>
 
         <!-- LISTA DE ESPECIALIDADES -->
@@ -295,15 +249,12 @@
         <a href="https://wa.me/5586994172728?text=Olá%20Eristay!%20Vim%20pelo%20site%20e%20quero%20iniciar%20o%20acompanhamento." class="cta-btn" target="_blank">
             💬 Falar no WhatsApp
         </a>
-        <button class="cta-btn" onclick="openModal()" style="background: #1f1f1f; color: var(--gold); border: 1px solid var(--gold);">
-            👑 Ver Planos & Cadastrar
-        </button>
 
         <!-- SEÇÃO O PROFISSIONAL -->
         <div class="section-title"><span>●</span> O Profissional</div>
         <div class="profile-card">
-            <!-- Substituir 'perfil.jpg' pelo caminho ou URL da sua foto -->
-            <img src="perfil.jpg" alt="Eristay Cantuario" class="profile-img">
+            <!-- Foto de perfil -->
+            <img src="Beige Minimalist Skinc..." alt="Eristay Cantuario" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80'">
             <div class="profile-info">
                 <h3>ERISTAY CANTUARIO</h3>
                 <span class="tag">Personal Trainer</span>
@@ -318,13 +269,7 @@
             <div class="carousel-track" id="track">
                 <!-- Slide 1 -->
                 <div class="carousel-slide">
-                    <!-- Substituir 'antes-depois-1.jpg' pelo caminho ou URL da imagem 1 -->
-                    <img src="antes-depois-1.jpg" alt="Evolução Aluno 1">
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <!-- Substituir 'antes-depois-2.jpg' pelo caminho ou URL da imagem 2 -->
-                    <img src="antes-depois-2.jpg" alt="Evolução Aluno 2">
+                    <img src="Red Modern Corporate..." alt="Evolução Aluno">
                 </div>
             </div>
             <div class="carousel-nav">
@@ -342,7 +287,7 @@
             </div>
             <div class="accordion-content">
                 <p><strong>Investimento: R$ 100,00/mês</strong></p><br>
-                <p> Treino 100% individualizado via aplicativo Mfit Personal com vídeos demonstrativos, periodização contínua e suporte direto via WhatsApp para correção de exercícios e dúvidas.</p>
+                <p>Treino 100% individualizado via aplicativo Mfit Personal com vídeos demonstrativos, periodização contínua e suporte direto via WhatsApp para correção de exercícios e dúvidas.</p>
             </div>
         </div>
 
@@ -373,40 +318,7 @@
         </div>
     </div>
 
-    <!-- MODAL / FORMULÁRIO DE CADASTRO -->
-    <div class="modal" id="leadModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">✕</span>
-            <div class="form-step active" id="step1">
-                <h4 style="color:var(--gold); margin-bottom:15px;">Passo 1 de 2: Seus Dados</h4>
-                <div class="form-group">
-                    <label>Nome Completo</label>
-                    <input type="text" id="leadName" placeholder="Ex: João da Silva">
-                </div>
-                <div class="form-group">
-                    <label>Seu WhatsApp</label>
-                    <input type="tel" id="leadPhone" placeholder="(86) 99999-9999">
-                </div>
-                <button class="cta-btn" onclick="nextStep(2)">Próximo Passo ➔</button>
-            </div>
-            
-            <div class="form-step" id="step2">
-                <h4 style="color:var(--gold); margin-bottom:15px;">Passo 2 de 2: Objetivo</h4>
-                <div class="form-group">
-                    <label>Qual o seu objetivo principal?</label>
-                    <select id="leadGoal">
-                        <option>Hipertrofia / Ganho de Massa</option>
-                        <option>Emagrecimento / Definição</option>
-                        <option>Saúde / Condicionamento</option>
-                    </select>
-                </div>
-                <button class="cta-btn" onclick="sendToWhatsapp()">Finalizar via WhatsApp 💬</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        /* Carrossel de Imagens */
         let currentSlide = 0;
         function moveSlide(direction) {
             const track = document.getElementById('track');
@@ -414,31 +326,9 @@
             currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
-
-        /* Accordion dos Planos */
         function toggleAccordion(header) {
             const content = header.nextElementSibling;
             content.classList.toggle('open');
-        }
-
-        /* Modal Formulário */
-        function openModal() {
-            document.getElementById('leadModal').style.display = 'flex';
-        }
-        function closeModal() {
-            document.getElementById('leadModal').style.display = 'none';
-        }
-        function nextStep(step) {
-            document.getElementById('step1').classList.remove('active');
-            document.getElementById('step2').classList.add('active');
-        }
-        function sendToWhatsapp() {
-            const name = document.getElementById('leadName').value;
-            const phone = document.getElementById('leadPhone').value;
-            const goal = document.getElementById('leadGoal').value;
-            const msg = `Olá Eristay! Meu nome é ${name} (${phone}) e meu objetivo é ${goal}. Gostaria de agendar minha consultoria!`;
-            window.open(`https://wa.me/5586994172728?text=${encodeURIComponent(msg)}`, '_blank');
-            closeModal();
         }
     </script>
 </body>
