@@ -1,335 +1,1161 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eristay Cantuario | Personal Trainer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0b0b0b;
-            --card-bg: #141414;
-            --gold: #d4af37;
-            --gold-light: #f5e4a0;
-            --text-color: #ffffff;
-            --text-muted: #aaaaaa;
-            --border-radius: 16px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Eristay Cantuario - Personal Trainer. Treinamento personalizado, hipertrofia, emagrecimento e consultoria online.">
+  <title>Eristay Cantuario | Personal Trainer</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
+  <style>
+    :root {
+      --black: #080808;
+      --dark: #111111;
+      --card: #171717;
+      --gold: #c9a34a;
+      --gold-light: #f0d58b;
+      --white: #f7f5ef;
+      --gray: #aaa69d;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 15px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background: var(--card-bg);
-            border: 1px solid #222;
-            border-radius: 24px;
-            padding: 24px 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
 
-        /* LOGO HEADER */
-        .logo-box {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .logo-box img {
-            max-width: 180px;
-            height: auto;
-            border-radius: 12px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        /* BADGES / BOTÕES INICIAIS */
-        .specialties {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-        .spec-item {
-            background: #1c1c1c;
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    button, input, textarea, select {
+      font: inherit;
+    }
 
-        /* CTA BUTTONS */
-        .cta-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 16px;
-            background: var(--gold);
-            color: #000;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            transition: transform 0.2s, background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-        .cta-btn:active {
-            transform: scale(0.98);
-        }
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
 
-        /* SEÇÃO O PROFISSIONAL */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--text-color);
-            margin: 30px 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .section-title span {
-            color: var(--gold);
-        }
+    .gold {
+      color: var(--gold-light);
+    }
 
-        .profile-card {
-            background: #181818;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border: 1px solid #282828;
-            margin-bottom: 25px;
-        }
-        .profile-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-        }
-        .profile-info {
-            padding: 20px;
-        }
-        .profile-info h3 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--gold);
-            margin-bottom: 4px;
-        }
-        .profile-info .tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--gold);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .profile-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
+    .section {
+      padding: 85px 0;
+    }
 
-        /* CARROSSEL ANTES E DEPOIS */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            border: 1px solid #282828;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.4s ease-in-out;
-        }
-        .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .carousel-slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .carousel-nav {
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            padding: 0 10px;
-        }
-        .nav-btn {
-            background: rgba(0,0,0,0.6);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
 
-        /* ACCORDION DE PLANOS */
-        .accordion-item {
-            background: #181818;
-            border: 1px solid #282828;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-        .accordion-header {
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--gold);
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 16px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-        .accordion-content.open {
-            padding: 16px;
-            max-height: 500px;
-            border-top: 1px solid #252525;
-        }
-    </style>
+    .section-title span {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: clamp(27px, 5vw, 42px);
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #111;
+      padding: 14px 22px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: .25s;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.08);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 13px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: .25s;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    /* MENU */
+    header {
+      background: rgba(8, 8, 8, .96);
+      border-bottom: 1px solid rgba(201, 163, 74, .2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 7px 11px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* CAPA */
+    .hero {
+      min-height: 660px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.75), rgba(0,0,0,.35)),
+        url("assets/minha-foto.jpg") center 30% / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 690px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 8vw, 76px);
+      line-height: 1.05;
+      margin: 18px 0;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: #d2d0ca;
+      max-width: 560px;
+      margin-bottom: 28px;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .specialties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 35px;
+    }
+
+    .specialties span {
+      border: 1px solid rgba(201,163,74,.45);
+      color: #e6d8b5;
+      padding: 7px 12px;
+      font-size: 12px;
+      border-radius: 30px;
+    }
+
+    /* SOBRE */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-photo {
+      min-height: 430px;
+      border: 1px solid rgba(201,163,74,.5);
+      border-radius: 8px;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.25), transparent),
+        url("assets/minha-foto.jpg") center / cover no-repeat;
+    }
+
+    .about-text h2 {
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .credential {
+      background: var(--card);
+      border-left: 3px solid var(--gold);
+      padding: 12px 15px;
+      font-size: 13px;
+    }
+
+    /* DIFERENCIAIS */
+    .dark-section {
+      background: #101010;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: var(--card);
+      padding: 28px 22px;
+      border: 1px solid #282828;
+      border-radius: 7px;
+    }
+
+    .feature .number {
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .feature h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .feature p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* RESULTADOS */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .result-card {
+      background: var(--card);
+      padding: 12px;
+      border-radius: 7px;
+      border: 1px solid #292929;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .before-after figure {
+      position: relative;
+    }
+
+    .before-after img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: #222;
+    }
+
+    .before-after figcaption {
+      position: absolute;
+      bottom: 7px;
+      left: 7px;
+      background: rgba(0,0,0,.8);
+      color: white;
+      padding: 4px 8px;
+      font-size: 10px;
+      border-radius: 3px;
+    }
+
+    .result-card p {
+      color: var(--gray);
+      font-size: 13px;
+      padding: 12px 3px 3px;
+    }
+
+    /* DEPOIMENTOS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      background: var(--card);
+      border: 1px solid #292929;
+      padding: 25px;
+      border-radius: 7px;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      color: #d2d0ca;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial strong {
+      color: var(--gold-light);
+      font-size: 13px;
+    }
+
+    /* PLANOS */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+      align-items: stretch;
+    }
+
+    .plan {
+      background: var(--card);
+      border: 1px solid #333;
+      padding: 26px 22px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan.featured {
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 25px rgba(201,163,74,.09);
+    }
+
+    .plan-type {
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .plan h3 {
+      font-size: 23px;
+      margin: 8px 0;
+    }
+
+    .price {
+      font-size: 32px;
+      color: var(--gold-light);
+      font-weight: 900;
+      margin: 12px 0;
+    }
+
+    .price small {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: normal;
+    }
+
+    .plan ul {
+      list-style: none;
+      margin: 10px 0 22px;
+      flex: 1;
+    }
+
+    .plan li {
+      color: #c7c4bd;
+      font-size: 13px;
+      padding: 7px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .plan li::before {
+      content: "✓ ";
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .plan .btn {
+      width: 100%;
+    }
+
+    .plan-note {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid #292929;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      padding: 18px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .faq-question span {
+      color: var(--gold);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 18px 18px;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* CONTATO */
+    .contact-box {
+      background: linear-gradient(135deg, #1c1a15, #111);
+      border: 1px solid rgba(201,163,74,.5);
+      border-radius: 9px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .contact-box h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .contact-link {
+      border: 1px solid #3a3528;
+      padding: 14px;
+      border-radius: 5px;
+      color: var(--gold-light);
+      transition: .2s;
+    }
+
+    .contact-link:hover {
+      background: #242015;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      background: #0c0c0c;
+      border: 1px solid #3b3b3b;
+      border-radius: 4px;
+      color: white;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    /* RODAPÉ */
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid #292929;
+      text-align: center;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 12px 0;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 99;
+      background: #1fa855;
+      color: white;
+      padding: 13px 17px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 5px 20px #0008;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: #101010;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid #333;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .features,
+      .results-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-photo {
+        min-height: 350px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 620px;
+        background-position: 60% center;
+      }
+
+      .hero-content {
+        padding: 70px 0;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .features,
+      .results-grid,
+      .testimonials,
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .before-after img {
+        height: 230px;
+      }
+
+      .contact-box {
+        padding: 25px 18px;
+      }
+
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- LOGO (Puxando a tua imagem exata enviada) -->
-        <div class="logo-box">
-            <img src="IMG_2081.png" alt="Eristay Cantuario Logo">
-        </div>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#inicio">ERISTAY <span>CANTUARIO</span></a>
 
-        <!-- LISTA DE ESPECIALIDADES -->
-        <div class="specialties">
-            <div class="spec-item">📌 Postura & Biomecânica</div>
-            <div class="spec-item">⚡ Técnica & Alta Performance</div>
-            <div class="spec-item">🔥 Emagrecimento & Hipertrofia</div>
-            <div class="spec-item">🎯 Treino Individualizado</div>
-        </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
 
-        <!-- BOTÕES DE AÇÃO -->
-        <a href="https://wa.me/5586994172728?text=Olá%20Eristay!%20Vim%20pelo%20site%20e%20quero%20iniciar%20o%20acompanhamento." class="cta-btn" target="_blank">
-            💬 Falar no WhatsApp
-        </a>
-
-        <!-- SEÇÃO O PROFISSIONAL -->
-        <div class="section-title"><span>●</span> O Profissional</div>
-        <div class="profile-card">
-            <!-- Foto de perfil -->
-            <img src="Beige Minimalist Skinc..." alt="Eristay Cantuario" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=500&q=80'">
-            <div class="profile-info">
-                <h3>ERISTAY CANTUARIO</h3>
-                <span class="tag">Personal Trainer</span>
-                <p>Profissional de Educação Física. O foco é transformar vidas e corpos através do treino certo, unindo técnica, alta performance e acompanhamento individualizado de verdade — seja na consultoria on-line ou no atendimento presencial.</p>
-                <p><strong>Missão:</strong> Guiar você até a sua melhor versão física e mental, entregando o caminho exato para hipertrofia e emagrecimento com segurança e suporte diário.</p>
-            </div>
-        </div>
-
-        <!-- SEÇÃO TRANSFORMAÇÕES (CARROSSEL) -->
-        <div class="section-title"><span>●</span> Transformações Reais</div>
-        <div class="carousel-container">
-            <div class="carousel-track" id="track">
-                <!-- Slide 1 -->
-                <div class="carousel-slide">
-                    <img src="Red Modern Corporate..." alt="Evolução Aluno">
-                </div>
-            </div>
-            <div class="carousel-nav">
-                <button class="nav-btn" onclick="moveSlide(-1)">❮</button>
-                <button class="nav-btn" onclick="moveSlide(1)">❯</button>
-            </div>
-        </div>
-
-        <!-- SEÇÃO PLANOS (ACCORDION) -->
-        <div class="section-title"><span>●</span> Planos & Investimento</div>
-        
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                📱 Consultoria On-line <span>▼</span>
-            </div>
-            <div class="accordion-content">
-                <p><strong>Investimento: R$ 100,00/mês</strong></p><br>
-                <p>Treino 100% individualizado via aplicativo Mfit Personal com vídeos demonstrativos, periodização contínua e suporte direto via WhatsApp para correção de exercícios e dúvidas.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                🏋️ Personal Presencial (Individual) <span>▼</span>
-            </div>
-            <div class="accordion-content">
-                <p>• <strong>5x/semana (20 aulas):</strong> R$ 660,00/mês</p>
-                <p>• <strong>4x/semana (16 aulas):</strong> R$ 560,00/mês</p>
-                <p>• <strong>3x/semana (12 aulas):</strong> R$ 460,00/mês</p>
-                <p>• <strong>2x/semana (8 aulas):</strong> R$ 330,00/mês</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                👥 Plano Dupla ou Trio <span>▼</span>
-            </div>
-            <div class="accordion-content">
-                <p><strong>Plano Dupla (2 pessoas):</strong></p>
-                <p>• 5x/sem: R$ 550 por aluno (Total: R$ 1.100)</p>
-                <p>• 3x/sem: R$ 390 por aluno (Total: R$ 780)</p><br>
-                <p><strong>Plano Trio (3 pessoas):</strong></p>
-                <p>• 5x/sem: R$ 500 por aluno (Total: R$ 1.500)</p>
-                <p>• 3x/sem: R$ 350 por aluno (Total: R$ 1.050)</p>
-            </div>
-        </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#planos">Planos</a>
+        <a href="#depoimentos">Feedbacks</a>
+        <a href="#contato">Contato</a>
+        <a href="https://www.instagram.com/eristaycantuario?vrfl=bHRtendoMHozYW81" target="_blank" rel="noopener">Instagram</a>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        let currentSlide = 0;
-        function moveSlide(direction) {
-            const track = document.getElementById('track');
-            const totalSlides = track.children.length;
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-        function toggleAccordion(header) {
-            const content = header.nextElementSibling;
-            content.classList.toggle('open');
-        }
-    </script>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Personal Trainer • CREF ativo</span>
+          <h1>Seu objetivo.<br><span>Meu compromisso.</span></h1>
+          <p>
+            Treinamento personalizado para quem busca evolução,
+            saúde e resultados. O seu próximo nível começa com uma decisão.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#planos">CONHEÇA OS PLANOS</a>
+            <a class="btn-outline" href="https://client.mfitpersonal.com.br/out/signup-link/MTU5NTIw" target="_blank" rel="noopener">CONSULTORIA ONLINE</a>
+          </div>
+
+          <div class="specialties">
+            <span>Hipertrofia</span>
+            <span>Emagrecimento</span>
+            <span>Condicionamento físico</span>
+            <span>Treinamento personalizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-photo" role="img" aria-label="Foto de Eristay Cantuario"></div>
+
+        <div class="about-text">
+          <span class="eyebrow">Conheça seu treinador</span>
+          <h2>Prazer, sou <span class="gold">Eristay Cantuario.</span></h2>
+
+          <p>
+            Sou profissional de Educação Física e Personal Trainer.
+            Meu trabalho é ajudar pessoas a alcançarem seus objetivos
+            por meio de um treinamento planejado, individualizado e consciente.
+          </p>
+
+          <p>
+            Acredito que cada pessoa tem seu próprio ritmo e que a evolução
+            acontece com orientação, consistência e dedicação. Mais do que
+            montar treinos, quero fazer parte da sua jornada de transformação.
+          </p>
+
+          <div class="credentials">
+            <div class="credential">🎓 Bacharel em Educação Física</div>
+            <div class="credential">🏅 CREF ativo</div>
+            <div class="credential">💪 Personal Trainer</div>
+          </div>
+
+          <a class="btn" href="#contato">VAMOS COMEÇAR?</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="container">
+        <div class="section-title">
+          <span>O que você encontra</span>
+          <h2>Treinar com <span class="gold">estratégia</span> faz diferença.</h2>
+          <p>Orientação e acompanhamento em cada etapa da sua evolução.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="number">01</div>
+            <h3>Treino individualizado</h3>
+            <p>Planejamento de acordo com seu objetivo, nível e rotina.</p>
+          </article>
+
+          <article class="feature">
+            <div class="number">02</div>
+            <h3>Acompanhamento</h3>
+            <p>Orientação para executar os exercícios com atenção e qualidade.</p>
+          </article>
+
+          <article class="feature">
+            <div class="number">03</div>
+            <h3>Evolução contínua</h3>
+            <p>Ajustes no planejamento conforme seu desenvolvimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <div class="section-title">
+          <span>Resultados dos alunos</span>
+          <h2>O trabalho aparece na <span class="gold">evolução.</span></h2>
+          <p>Confira alguns registros de evolução dos alunos.</p>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <div class="before-after">
+              <figure>
+                <img src="assets/aluno1-antes.jpg" alt="Aluno 1 antes" loading="lazy">
+                <figcaption>ANTES</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/aluno1-depois.jpg" alt="Aluno 1 depois" loading="lazy">
+                <figcaption>DEPOIS</figcaption>
+              </figure>
+            </div>
+            <p>Evolução individual com dedicação e consistência.</p>
+          </article>
+
+          <article class="result-card">
+            <div class="before-after">
+              <figure>
+                <img src="assets/aluno2-antes.jpg" alt="Aluno 2 antes" loading="lazy">
+                <figcaption>ANTES</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/aluno2-depois.jpg" alt="Aluno 2 depois" loading="lazy">
+                <figcaption>DEPOIS</figcaption>
+              </figure>
+            </div>
+            <p>Cada etapa faz parte de uma jornada única.</p>
+          </article>
+
+          <article class="result-card">
+            <div class="before-after">
+              <figure>
+                <img src="assets/aluno3-antes.jpg" alt="Aluno 3 antes" loading="lazy">
+                <figcaption>ANTES</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/aluno3-depois.jpg" alt="Aluno 3 depois" loading="lazy">
+                <figcaption>DEPOIS</figcaption>
+              </figure>
+            </div>
+            <p>Constância, orientação e compromisso com o processo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="depoimentos">
+      <div class="container">
+        <div class="section-title">
+          <span>Feedbacks</span>
+          <h2>Quem treina, <span class="gold">compartilha.</span></h2>
+          <p>Depoimentos de quem faz parte dessa jornada.</p>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“[Insira aqui o depoimento real do seu aluno.]”</p>
+            <strong>Aluno(a) 01</strong>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“[Insira aqui outro feedback real sobre o acompanhamento.]”</p>
+            <strong>Aluno(a) 02</strong>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>“[Insira aqui mais um depoimento real.]”</p>
+            <strong>Aluno(a) 03</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section-title">
+          <span>Escolha seu acompanhamento</span>
+          <h2>Planos e <span class="gold">investimento.</span></h2>
+          <p>Encontre a modalidade que combina com sua rotina e seu objetivo.</p>
+        </div>
+
+        <h3 class="gold" style="margin-bottom:18px;">Acompanhamento presencial</h3>
+
+        <div class="plans-grid">
+          <article class="plan">
+            <span class="plan-type">Presencial</span>
+            <h3>2 vezes por semana</h3>
+            <div class="price">R$ 330 <small>/ mês</small></div>
+            <ul>
+              <li>2 sessões semanais</li>
+              <li>Orientação presencial</li>
+              <li>Treinamento personalizado</li>
+            </ul>
+            <button class="btn choose-plan" data-plan="Presencial - 2 vezes por semana - R$ 330">QUERO ESSE PLANO</button>
+          </article>
+
+          <article class="plan featured">
+            <span class="plan-type">Presencial</span>
+            <h3>3 vezes por semana</h3>
+            <div class="price">R$ 560 <small>/ mês</small></div>
+            <ul>
+              <li>3 sessões semanais</li>
+              <li>Orientação presencial</li>
+              <li>Treinamento personalizado</li>
+            </ul>
+            <button class="btn choose-plan" data-plan="Presencial - 3 vezes por semana - R$ 560">QUERO ESSE PLANO</button>
+          </article>
+
+          <article class="plan">
+            <span class="plan-type">Presencial</span>
+            <h3>4 vezes por semana</h3>
+            <div class="price">R$ 560 <small>/ mês</small></div>
+            <ul>
+              <li>4 sessões semanais</li>
+              <li>Orientação presencial</li>
+              <li>Treinamento personalizado</li>
+            </ul>
+            <button class="btn choose-plan" data-plan="Presencial - 4 vezes por semana - R$ 560">QUERO ESSE PLANO</button>
+          </article>
+
+          <article class="plan">
+            <span class="plan-type">Presencial</span>
+            <h3>5 vezes por semana</h3>
+            <div class="price">R$ 660 <small>/ mês</small></div>
+            <ul>
+              <li>5 sessões semanais</li>
+              <li>Orientação presencial</li>
+              <li>Treinamento personalizado</li>
+            </ul>
+            <button class="btn choose-plan" data-plan="Presencial - 5 vezes por semana - R$ 660">QUERO ESSE PLANO</button>
+          </article>
+        </div>
+
+        <h3 class="gold" style="margin:45px 0 18px;">Acompanhamento híbrido — online + presencial</h3>
+
+        <div class="plans-grid">
+          <article class="plan">
+            <span class="plan-type">Híbrido • Bronze</span>
+            <h3>Bronze</h3>
+            <div class="price">R$ 190 <small>/ mês</small></div>
+            <ul>
+              <li>Consultoria online</li>
+              <li>1 encontro presencial por semana</li>
+              <li>Treinamento pelo aplicativo</li>
+              <li>Orientações e acompanhamento</li>
+            </ul>
+            <button class="btn choose-plan" data-plan="Híbrido Bronze - R$ 190">QUERO ESSE PLANO</button>
+          </article>
+
+          <article class="plan featured">
+            <span class="plan-type">Híbrido • Silver</span>
+            <h3>Silver</h3>
+            <div class="price">R$ 280 <small>/ mês</small></div>
+            <ul>
+              <li>Consultoria online</li>
+              <li>2 encontros presenciais por semana</li>
+              <li>Treinamento pelo aplicativo</li>
+              <li>Orientações e acompanhamento</li>
+            </ul>
+            <button class="btn choose-plan" data-plan="Híbrido Silver - R$ 280">QUERO ESSE PLANO</button>
+          </article>
+
+          <article class="plan">
+            <span class="plan-type">Consultoria online</span>
+            <h3>Online</h3>
+            <div class="price">Consulte</div>
+            <ul>
+              <li>Treinos personalizados</li>
+              <li>Acesso pelo aplicativo Mfitpersonal</li>
+              <li>Vídeos demonstrativos</li>
+              <li>Orientações detalhadas</li>
+            </ul>
+            <a class="btn" href="https://client.mfitpersonal.com.br/out/signup-link/MTU5NTIw" target="_blank" rel="noopener">FAZER CADASTRO</a>
+          </article>
+        </div>
+
+        <p class="plan-note">Consulte a disponibilidade de horários e as condições de atendimento pelo WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="container">
+        <div class="section-title">
+          <span>Dúvidas frequentes</span>
+          <h2>Vamos esclarecer?</h2>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">Como funciona a consultoria online? <span>+</span></button>
+            <div class="faq-answer">
+              Você realiza seu cadastro no Mfitpersonal e recebe seu planejamento
+              de treino pelo aplicativo, com vídeos demonstrativos e orientações detalhadas.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Posso treinar mesmo sendo iniciante? <span>+</span></button>
+            <div class="faq-answer">
+              Sim. O treinamento é planejado considerando seu nível atual,
+              seus objetivos e sua rotina.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Como faço para contratar um plano? <span>+</span></button>
+            <div class="faq-answer">
+              Escolha o plano desejado e envie uma mensagem pelo formulário
+              ou pelo botão de WhatsApp para conversar sobre horários e disponibilidade.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Onde faço meu cadastro online? <span>+</span></button>
+            <div class="faq-answer">
+              O cadastro é feito diretamente pelo link do Mfitpersonal disponível
+              nesta página, na seção de contato ou nos planos.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <span class="eyebrow">Seu próximo passo começa aqui</span>
+            <h2>Vamos trabalhar pela sua <span class="gold">evolução?</span></h2>
+            <p>
+              Entre em contato para conhecer os planos, consultar horários
+              e descobrir qual acompanhamento combina com seus objetivos.
+            </p>
+
+            <div class="contact-links">
+              <a class="contact-link" href="https://wa.me/5586994172728" target="_blank" rel="noopener">
+                WhatsApp: (86) 99417-2728
+              </a>
+              <a class="contact-link" href="https://www.instagram.com/eristaycantuario?vrfl=bHRtendoMHozYW81" target="_blank" rel="noopener">
+                Instagram: @eristaycantuario
+              </a>
+              <a class="contact-link" href="https://client.mfitpersonal.com.br/out/signup-link/MTU5NTIw" target="_blank" rel="noopener">
+                Cadastro na consultoria Mfitpersonal
+              </a>
+            </div>
+          </div>
+
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Seu nome" required>
+            <input type="number" id="age" placeholder="Sua idade">
+            <select id="goal" required>
+              <option value="">Qual é seu objetivo?</option>
+              <option>Hipertrofia</option>
+              <option>Emagrecimento</option>
+              <option>Condicionamento físico</option>
+              <option>Saúde e qualidade de vida</option>
+              <option>Outro objetivo</option>
+            </select>
+            <select id="modality">
+              <option value="">Modalidade de interesse</option>
+              <option>Presencial</option>
+              <option>Online</option>
+              <option>Híbrido</option>
+            </select>
+            <textarea id="message" placeholder="Conte um pouco sobre seu objetivo (opcional)"></textarea>
+            <button type="submit" class="btn">ENVIAR PELO WHATSAPP</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>ERISTAY CANTUARIO</strong>
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#planos">Planos</a>
+        <a href="https://www.instagram.com/eristaycantuario?vrfl=bHRtendoMHozYW81" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5586994172728" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <p>Personal Trainer • Educação Física • CREF ativo</p>
+      <p>© <span id="year"></span> Eristay Cantuario. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5586994172728" target="_blank" rel="noopener" aria-label="Fale pelo WhatsApp">
+    WhatsApp
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = "5586994172728";
+
+    function sendWhatsApp(message) {
+      const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+    }
+
+    // Menu mobile
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    // Seleção de plano
+    document.querySelectorAll(".choose-plan").forEach(button => {
+      button.addEventListener("click", () => {
+        const plan = button.dataset.plan;
+        sendWhatsApp("Olá, Eristay! Tenho interesse no plano: " + plan + ". Gostaria de mais informações.");
+      });
+    });
+
+    // Formulário de contato
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const goal = document.getElementById("goal").value;
+      const modality = document.getElementById("modality").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Olá, Eristay! Meu nome é " + name +
+        (age ? ", tenho " + age + " anos" : "") +
+        ". Meu objetivo é " + goal +
+        (modality ? ". Tenho interesse na modalidade " + modality : "") +
+        (message ? ". Mais informações: " + message : "") +
+        ". Gostaria de saber mais sobre seu acompanhamento.";
+
+      sendWhatsApp(text);
+    });
+
+    // FAQ
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        const item = question.parentElement;
+        item.classList.toggle("active");
+        const symbol = question.querySelector("span");
+        symbol.textContent = item.classList.contains("active") ? "−" : "+";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
